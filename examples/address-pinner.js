@@ -34,7 +34,7 @@ sock.subscribe(ADDRESS_TO_PIN);
 console.log("Subscriber connected to port 5556");
 
 
-var work_groups = [["9TAVPGRPC9PEDKPWOWLTAZOAQKDSJRRXOLGYIKHSMBAFPQCBRIFENAFBJLPKJWWNBMECVRZQFLXFLNLS9"]];//Array of [Array of TX hashes].
+var work_groups = [];//Array of [Array of TX hashes].
 var current_address_txs = [];
 var timer = null;
 
