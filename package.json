@@ -1,0 +1,23 @@
+{
+  "name": "aion-examples",
+  "version": "1.0.0",
+  "description": "Examples for using the IOTA:AION rest api.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ovanwijk/aion-examples.git"
+  },
+  "author": "Olaf van Wijk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ovanwijk/aion-examples/issues"
+  },
+  "homepage": "https://github.com/ovanwijk/aion-examples#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "zeromq": "^5.2.0"
+  }
+}
