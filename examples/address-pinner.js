@@ -16,9 +16,12 @@ var axios = require('axios');
 var zmq = require("zeromq"),
   sock = zmq.socket("sub");
 
-var ZMQ = "tcp://192.168.56.1:5556";
-var AION = "http://192.168.56.101:8080";
-var IRI = "http://192.168.56.1:14265"
+  //var ip = "84.85.60.42";
+  var ip1 = "192.168.56.101";
+  var ip2 = "localhost";
+var ZMQ = "tcp://"+ ip2 +":5556";
+var AION = "http://"+ ip1 +":8080";
+var IRI = "http://"+ ip2 +":14265"
 
 
 
