@@ -8,7 +8,7 @@ var zmq = require("zeromq"),
 var aion_source = "http://192.168.56.101:8081";
 var iri_source = "http://192.168.56.1:14265";
 var aion_target = "http://192.168.56.101:8083";
-var max_steps = 10;
+var max_steps = 20;
 var min_step_size = 28800;
 
 
@@ -24,12 +24,28 @@ async function connect_subgraph(tx) {
   return (await axios.get(aion_target + '/subgraph/connect/' + tx)).data;
 }
 
+function chunkArray(myArray, chunk_size){
+  var results = [];
+  
+  while (myArray.length) {
+      results.push(myArray.splice(0, chunk_size));
+  }
+  
+  return results;
+}
+
 async function storeLifeline(data) {
- return (await axios.post(aion_target + '/subgraph/insert', 
+  var dataA = chunkArray(data, 20);
+for(var i =0; i< dataA.length; i++){
+ await axios.post(aion_target + '/subgraph/insert', 
   {
-    data: data,
+    data: dataA[i],
     node: iri_source
-  })).data;
+  }).catch(a => {
+    console.log(a);
+  })
+}
+ return ''
 }
 
 async function findCommonLifelines(timestamp) {
