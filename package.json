@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/ovanwijk/aion-examples#readme",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "zeromq": "^5.2.0"
   }
 }
